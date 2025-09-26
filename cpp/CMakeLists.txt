@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.10)
 
 project(HelloWorld)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_CXX_STANDARD 20)
+
 find_package(fmt CONFIG REQUIRED)
 
 add_executable(HelloWorld helloworld.cpp)
