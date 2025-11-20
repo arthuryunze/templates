@@ -70,7 +70,7 @@ function build_and_push {
     echo -e "${YELLOW}包含架构: linux/amd64, linux/arm64${NC}"
 
     # 使用 --push 直接推送
-    docker buildx build --platform linux/amd64,linux/arm64 -t "${TAG_FULL}" . --push
+    docker buildx build --platform linux/amd64,linux/arm64 -t "${TAG_FULL}" . --push --allow security.insecure
 
     if [ $? -eq 0 ]; then
         echo -e "${GREEN}>>> 🎉 成功！双架构镜像已推送到: ${TAG_FULL}${NC}"
