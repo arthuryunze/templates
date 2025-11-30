@@ -10,6 +10,9 @@ WORKDIR /app
 # 复制依赖文件
 COPY pyproject.toml uv.lock /app/
 
+# 安装python 3.12
+RUN uv python install 3.12 --mirror https://python-standalone.org/mirror/astral-sh/python-build-standalone
+
 # 安装依赖
 RUN uv sync --locked
 
